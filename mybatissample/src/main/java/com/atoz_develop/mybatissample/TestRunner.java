@@ -9,10 +9,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-
-import com.sun.org.slf4j.internal.LoggerFactory;
-
-import ch.qos.logback.classic.Logger;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -30,11 +26,11 @@ public class TestRunner implements ApplicationRunner{
 		
 		// Datasource
 		Connection connection = dataSource.getConnection();
-		System.out.println(("DBCP: " + dataSource.getClass())); // »ç¿ëÇÏ´Â DBCP Å¸ÀÔ È®ÀÎ
+		System.out.println(("DBCP: " + dataSource.getClass())); // ì‚¬ìš©í•˜ëŠ” DBCP íƒ€ì… í™•ì¸
 		System.out.println("Url: " + connection.getMetaData().getURL());
 		System.out.println("UserName: " + connection.getMetaData().getUserName());
 		
 		// JdbcTemplate
-        jdbcTemplate.execute("INSERT INTO Products (prod_name, prod_price) values ('¹öÅ¶ÇŞ', 6900)");
+        jdbcTemplate.execute("INSERT INTO Products (prod_name, prod_price) values ('ë²„í‚·í–‡', 6900)");
     }
 }
